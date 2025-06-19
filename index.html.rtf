@@ -1,0 +1,539 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;\red70\green137\blue204;\red23\green24\blue24;\red140\green211\blue254;
+\red202\green202\blue202;\red109\green109\blue109;\red194\green126\blue101;\red109\green115\blue120;\red212\green212\blue212;
+\red113\green192\blue131;\red167\green197\blue152;\red183\green111\blue247;\red246\green124\blue48;\red54\green192\blue160;
+}
+{\*\expandedcolortbl;;\cssrgb\c33725\c61176\c83922;\cssrgb\c11765\c12157\c12549;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c83137\c83137\c83137;\cssrgb\c50196\c50196\c50196;\cssrgb\c80784\c56863\c47059;\cssrgb\c50196\c52549\c54510;\cssrgb\c86275\c86275\c86275;
+\cssrgb\c50588\c78824\c58431;\cssrgb\c70980\c80784\c65882;\cssrgb\c77255\c54118\c97647;\cssrgb\c98039\c56471\c24314;\cssrgb\c23922\c78824\c69020;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh16880\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+<!DOCTYPE\cf4  html\cf2 >\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 <\cf2 html\cf5  \cf4 lang\cf6 =\cf7 "en"\cf6 >\cf5 \cb1 \
+\cf6 \cb3 <\cf2 head\cf6 >\cf5 \cb1 \
+\cb3     \cf6 <\cf2 meta\cf5  \cf4 charset\cf6 =\cf7 "UTF-8"\cf6 >\cf5 \cb1 \
+\cb3     \cf6 <\cf2 meta\cf5  \cf4 name\cf6 =\cf7 "viewport"\cf5  \cf4 content\cf6 =\cf7 "width=device-width, initial-scale=1.0"\cf6 >\cf5 \cb1 \
+\cb3     \cf6 <\cf2 title\cf6 >\cf5 Movie Trivia Quiz\cf6 </\cf2 title\cf6 >\cf5 \cb1 \
+\cb3     \cf8 <!-- Tailwind CSS CDN for styling -->\cf5 \cb1 \
+\cb3     \cf6 <\cf2 script\cf5  \cf4 src\cf6 =\cf7 "https://cdn.tailwindcss.com"\cf6 ></\cf2 script\cf6 >\cf5 \cb1 \
+\cb3     \cf6 <\cf2 style\cf6 >\cf5 \cb1 \
+\cb3         \cf8 /* Custom styles to ensure 'Inter' font and smooth transitions */\cf5 \cb1 \
+\cb3         \cf2 body\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 font-family:\cf5  \cf10 'Inter'\cf9 ,\cf5  \cf7 sans-serif\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #1a202c\cf9 ;\cf5  \cf8 /* Dark background */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #e2e8f0\cf9 ;\cf5  \cf8 /* Light text */\cf5 \cb1 \
+\cb3             \cf4 display:\cf5  \cf7 flex\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 justify-content:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 align-items:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 min-height:\cf5  \cf11 100vh\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 margin:\cf5  \cf11 0\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 padding:\cf5  \cf11 20px\cf9 ;\cf5  \cf8 /* Add some padding for smaller screens */\cf5 \cb1 \
+\cb3             \cf4 box-sizing:\cf5  \cf7 border-box\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .quiz-container\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 max-width:\cf5  \cf11 600px\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 width:\cf5  \cf11 100%\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #2d3748\cf9 ;\cf5  \cf8 /* Slightly lighter dark background for the card */\cf5 \cb1 \
+\cb3             \cf4 border-radius:\cf5  \cf11 1rem\cf9 ;\cf5  \cf8 /* Rounded corners */\cf5 \cb1 \
+\cb3             \cf4 box-shadow:\cf5  \cf11 0\cf5  \cf11 10px\cf5  \cf11 15px\cf5  \cf7 rgba(\cf11 0\cf9 ,\cf5  \cf11 0\cf9 ,\cf5  \cf11 0\cf9 ,\cf5  \cf11 0.3\cf7 )\cf9 ;\cf5  \cf8 /* Soft shadow */\cf5 \cb1 \
+\cb3             \cf4 padding:\cf5  \cf11 2rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 display:\cf5  \cf7 flex\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 flex-direction:\cf5  \cf7 column\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 gap:\cf5  \cf11 1.5rem\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .question-text\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 font-size:\cf5  \cf11 1.5rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 font-weight:\cf5  \cf7 bold\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #f7fafc\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 text-align:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 margin-bottom:\cf5  \cf11 1.5rem\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .answer-button\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #4a5568\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #edf2f7\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 padding:\cf5  \cf11 1rem\cf5  \cf11 1.5rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 border-radius:\cf5  \cf11 0.75rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 transition:\cf5  \cf7 background-color\cf5  \cf11 0.3s\cf5  \cf7 ease\cf9 ,\cf5  \cf7 transform\cf5  \cf11 0.2s\cf5  \cf7 ease\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 cursor:\cf5  \cf7 pointer\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 text-align:\cf5  \cf7 left\cf9 ;\cf5  \cf8 /* Align text to left within button */\cf5 \cb1 \
+\cb3             \cf4 width:\cf5  \cf11 100%\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 border:\cf5  \cf11 2px\cf5  \cf7 solid\cf5  \cf7 transparent\cf9 ;\cf5  \cf8 /* Default border */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .answer-button:hover:not\cf5 (\cf2 .correct\cf5 )\cf2 :not\cf5 (\cf2 .incorrect\cf5 ) \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #636b77\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 transform:\cf5  \cf7 translateY(\cf11 -2px\cf7 )\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .answer-button.selected\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 border-color:\cf5  #667eea\cf9 ;\cf5  \cf8 /* Blue border for selected */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .answer-button.correct\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #48bb78\cf9 ;\cf5  \cf8 /* Green for correct */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  \cf7 white\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 pointer-events:\cf5  \cf7 none\cf9 ;\cf5  \cf8 /* Disable after selection */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .answer-button.incorrect\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #f56565\cf9 ;\cf5  \cf8 /* Red for incorrect */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  \cf7 white\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 pointer-events:\cf5  \cf7 none\cf9 ;\cf5  \cf8 /* Disable after selection */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .feedback-box\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #2c5282\cf9 ;\cf5  \cf8 /* Darker blue for feedback */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #bee3f8\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 padding:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 border-radius:\cf5  \cf11 0.5rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 margin-top:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 text-align:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .button-group\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 display:\cf5  \cf7 flex\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 justify-content:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 gap:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 margin-top:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .action-button\cf5  \cf9 \{\cf5  \cf8 /* Generic style for various action buttons */\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #4299e1\cf9 ;\cf5  \cf8 /* Blue */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  \cf7 white\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 padding:\cf5  \cf11 0.75rem\cf5  \cf11 1.5rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 border-radius:\cf5  \cf11 0.75rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 transition:\cf5  \cf7 background-color\cf5  \cf11 0.3s\cf5  \cf7 ease\cf9 ,\cf5  \cf7 transform\cf5  \cf11 0.2s\cf5  \cf7 ease\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 cursor:\cf5  \cf7 pointer\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 font-weight:\cf5  \cf7 bold\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 text-align:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 flex-grow:\cf5  \cf11 1\cf9 ;\cf5  \cf8 /* Allow buttons to grow */\cf5 \cb1 \
+\cb3             \cf4 max-width:\cf5  \cf11 250px\cf9 ;\cf5  \cf8 /* Max width for buttons in a group */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .action-button:hover\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #3182ce\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 transform:\cf5  \cf7 translateY(\cf11 -2px\cf7 )\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .action-button.loading\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #6b7280\cf9 ;\cf5  \cf8 /* Gray when loading */\cf5 \cb1 \
+\cb3             \cf4 cursor:\cf5  \cf7 not-allowed\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .score-container\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 text-align:\cf5  \cf7 center\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 font-size:\cf5  \cf11 1.8rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 font-weight:\cf5  \cf7 bold\cf9 ;\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #f6e05e\cf9 ;\cf5  \cf8 /* Yellow for score */\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .restart-button\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #a0aec0\cf9 ;\cf5  \cf8 /* Gray for restart */\cf5 \cb1 \
+\cb3             \cf4 color:\cf5  #2d3748\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf2 .restart-button:hover\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf4 background-color:\cf5  #718096\cf9 ;\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\cb3         \cf8 /* Ensure responsive layout for small screens */\cf5 \cb1 \
+\cb3         @\cf2 media\cf5  (\cf2 max-width:\cf5  640\cf2 px\cf5 ) \cf9 \{\cf5 \cb1 \
+\cb3             .quiz-container \{\cb1 \
+\cb3                 \cf4 padding:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3                 \cf4 border-radius:\cf5  \cf11 0.5rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3             \cf2 .question-text\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf4 font-size:\cf5  \cf11 1.25rem\cf9 ;\cf5 \cb1 \
+\cb3                 \cf4 margin-bottom:\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3             \cf2 .answer-button\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf4 padding:\cf5  \cf11 0.75rem\cf5  \cf11 1rem\cf9 ;\cf5 \cb1 \
+\cb3                 \cf4 font-size:\cf5  \cf11 0.9rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3             \cf2 .feedback-box\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf4 padding:\cf5  \cf11 0.75rem\cf9 ;\cf5 \cb1 \
+\cb3                 \cf4 font-size:\cf5  \cf11 0.9rem\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3             \cf2 .button-group\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf4 flex-direction:\cf5  \cf7 column\cf9 ;\cf5  \cf8 /* Stack buttons vertically on small screens */\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \}\cb1 \
+\cb3     \cf6 </\cf2 style\cf6 >\cf5 \cb1 \
+\cf6 \cb3 </\cf2 head\cf6 >\cf5 \cb1 \
+\cf6 \cb3 <\cf2 body\cf6 >\cf5 \cb1 \
+\cb3     \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "quiz-app"\cf5  \cf4 class\cf6 =\cf7 "quiz-container"\cf6 >\cf5 \cb1 \
+\cb3         \cf8 <!-- Question display area -->\cf5 \cb1 \
+\cb3         \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "question-display"\cf5  \cf4 class\cf6 =\cf7 "question-text"\cf6 ></\cf2 div\cf6 >\cf5 \cb1 \
+\
+\cb3         \cf8 <!-- Answer buttons area -->\cf5 \cb1 \
+\cb3         \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "answer-buttons"\cf5  \cf4 class\cf6 =\cf7 "grid grid-cols-1 gap-3"\cf6 ></\cf2 div\cf6 >\cf5 \cb1 \
+\
+\cb3         \cf8 <!-- Feedback and explanation area -->\cf5 \cb1 \
+\cb3         \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "feedback-area"\cf5  \cf4 class\cf6 =\cf7 "hidden"\cf6 >\cf5 \cb1 \
+\cb3             \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "feedback-message"\cf5  \cf4 class\cf6 =\cf7 "feedback-box"\cf6 ></\cf2 div\cf6 >\cf5 \cb1 \
+\cb3             \cf6 <\cf2 div\cf5  \cf4 class\cf6 =\cf7 "button-group"\cf6 >\cf5 \cb1 \
+\cb3                 \cf6 <\cf2 button\cf5  \cf4 id\cf6 =\cf7 "learn-more-button"\cf5  \cf4 class\cf6 =\cf7 "action-button hidden"\cf6 >\cf5 Learn More 
+\f1 \uc0\u10024 
+\f0 \cf6 </\cf2 button\cf6 >\cf5 \cb1 \
+\cb3                 \cf6 <\cf2 button\cf5  \cf4 id\cf6 =\cf7 "next-button"\cf5  \cf4 class\cf6 =\cf7 "action-button hidden"\cf6 >\cf5 Next Question\cf6 </\cf2 button\cf6 >\cf5 \cb1 \
+\cb3             \cf6 </\cf2 div\cf6 >\cf5 \cb1 \
+\cb3         \cf6 </\cf2 div\cf6 >\cf5 \cb1 \
+\
+\cb3         \cf8 <!-- Quiz results area -->\cf5 \cb1 \
+\cb3         \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "results-area"\cf5  \cf4 class\cf6 =\cf7 "hidden flex flex-col items-center gap-4"\cf6 >\cf5 \cb1 \
+\cb3             \cf6 <\cf2 div\cf5  \cf4 id\cf6 =\cf7 "score-display"\cf5  \cf4 class\cf6 =\cf7 "score-container"\cf6 ></\cf2 div\cf6 >\cf5 \cb1 \
+\cb3             \cf6 <\cf2 div\cf5  \cf4 class\cf6 =\cf7 "button-group"\cf6 >\cf5 \cb1 \
+\cb3                 \cf6 <\cf2 button\cf5  \cf4 id\cf6 =\cf7 "restart-button"\cf5  \cf4 class\cf6 =\cf7 "action-button restart-button"\cf6 >\cf5 Restart Quiz\cf6 </\cf2 button\cf6 >\cf5 \cb1 \
+\cb3                 \cf6 <\cf2 button\cf5  \cf4 id\cf6 =\cf7 "generate-new-question-button"\cf5  \cf4 class\cf6 =\cf7 "action-button"\cf6 >\cf5 Generate New Question 
+\f1 \uc0\u10024 
+\f0 \cf6 </\cf2 button\cf6 >\cf5 \cb1 \
+\cb3             \cf6 </\cf2 div\cf6 >\cf5 \cb1 \
+\cb3         \cf6 </\cf2 div\cf6 >\cf5 \cb1 \
+\cb3     \cf6 </\cf2 div\cf6 >\cf5 \cb1 \
+\
+\cb3     \cf6 <\cf2 script\cf6 >\cf5 \cb1 \
+\cb3         \cf8 // Array of quiz questions, answers, and explanations\cf5 \cb1 \
+\cb3         \cf12 const\cf5  questions \cf9 =\cf5  \cf9 [\cf5 \cb1 \
+\cb3             \cf9 \{\cf5 \cb1 \
+\cb3                 question\cf9 :\cf5  \cf10 "Who directed the 1994 film 'Pulp Fiction'?"\cf9 ,\cf5 \cb1 \
+\cb3                 answers\cf9 :\cf5  \cf9 [\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Martin Scorsese"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Quentin Tarantino"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 true\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Steven Spielberg"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Christopher Nolan"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 ],\cf5 \cb1 \
+\cb3                 explanation\cf9 :\cf5  \cf10 "Quentin Tarantino wrote and directed the critically acclaimed 'Pulp Fiction'."\cf5 \cb1 \
+\cb3             \cf9 \},\cf5 \cb1 \
+\cb3             \cf9 \{\cf5 \cb1 \
+\cb3                 question\cf9 :\cf5  \cf10 "Which actress won an Oscar for Best Actress for her role in 'Black Swan'?"\cf9 ,\cf5 \cb1 \
+\cb3                 answers\cf9 :\cf5  \cf9 [\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Mila Kunis"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Anne Hathaway"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Natalie Portman"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 true\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Jennifer Lawrence"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 ],\cf5 \cb1 \
+\cb3                 explanation\cf9 :\cf5  \cf10 "Natalie Portman delivered a powerful performance as Nina Sayers in 'Black Swan', earning her an Academy Award."\cf5 \cb1 \
+\cb3             \cf9 \},\cf5 \cb1 \
+\cb3             \cf9 \{\cf5 \cb1 \
+\cb3                 question\cf9 :\cf5  \cf10 "In 'The Matrix', what is Neo's real name?"\cf9 ,\cf5 \cb1 \
+\cb3                 answers\cf9 :\cf5  \cf9 [\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Thomas Anderson"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 true\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "John Smith"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Agent Brown"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Cypher"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 ],\cf5 \cb1 \
+\cb3                 explanation\cf9 :\cf5  \cf10 "Before he was 'The One', Neo was a computer programmer named Thomas Anderson."\cf5 \cb1 \
+\cb3             \cf9 \},\cf5 \cb1 \
+\cb3             \cf9 \{\cf5 \cb1 \
+\cb3                 question\cf9 :\cf5  \cf10 "Which of these is NOT a Disney animated feature film?"\cf9 ,\cf5 \cb1 \
+\cb3                 answers\cf9 :\cf5  \cf9 [\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "The Lion King"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Spirited Away"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 true\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Frozen"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "Moana"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 ],\cf5 \cb1 \
+\cb3                 explanation\cf9 :\cf5  \cf10 "'Spirited Away' is a celebrated Japanese animated fantasy film directed by Hayao Miyazaki, produced by Studio Ghibli."\cf5 \cb1 \
+\cb3             \cf9 \},\cf5 \cb1 \
+\cb3             \cf9 \{\cf5 \cb1 \
+\cb3                 question\cf9 :\cf5  \cf10 "What year was the first 'Star Wars' movie (A New Hope) released?"\cf9 ,\cf5 \cb1 \
+\cb3                 answers\cf9 :\cf5  \cf9 [\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "1975"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "1980"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "1977"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 true\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     \cf9 \{\cf5  text\cf9 :\cf5  \cf10 "1983"\cf9 ,\cf5  correct\cf9 :\cf5  \cf12 false\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 ],\cf5 \cb1 \
+\cb3                 explanation\cf9 :\cf5  \cf10 "The original 'Star Wars: A New Hope' premiered in 1977, changing cinematic history forever."\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \cf9 ];\cf5 \cb1 \
+\
+\cb3         \cf8 // Get DOM elements\cf5 \cb1 \
+\cb3         \cf12 const\cf5  questionDisplay \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'question-display'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  answerButtons \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'answer-buttons'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  feedbackArea \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'feedback-area'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  feedbackMessage \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'feedback-message'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  nextButton \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'next-button'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  learnMoreButton \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'learn-more-button'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  resultsArea \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'results-area'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  scoreDisplay \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'score-display'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  restartButton \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'restart-button'\cf9 );\cf5 \cb1 \
+\cb3         \cf12 const\cf5  generateNewQuestionButton \cf9 =\cf5  document\cf9 .\cf5 getElementById\cf9 (\cf10 'generate-new-question-button'\cf9 );\cf5 \cb1 \
+\
+\cb3         \cf12 let\cf5  currentQuestionIndex \cf9 =\cf5  \cf13 0\cf9 ;\cf5 \cb1 \
+\cb3         \cf12 let\cf5  score \cf9 =\cf5  \cf13 0\cf9 ;\cf5 \cb1 \
+\cb3         \cf12 let\cf5  quizActive \cf9 =\cf5  \cf12 true\cf9 ;\cf5  \cf8 // State to control if quiz is in progress\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Initializes the quiz or restarts it to the beginning state.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  startQuiz\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             currentQuestionIndex \cf9 =\cf5  \cf13 0\cf9 ;\cf5 \cb1 \
+\cb3             score \cf9 =\cf5  \cf13 0\cf9 ;\cf5 \cb1 \
+\cb3             quizActive \cf9 =\cf5  \cf12 true\cf9 ;\cf5 \cb1 \
+\cb3             \cf8 // Hide results and feedback, show quiz elements\cf5 \cb1 \
+\cb3             resultsArea\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5 \cb1 \
+\cb3             feedbackArea\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5 \cb1 \
+\cb3             nextButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Hide next button until answer is selected\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Hide learn more button\cf5 \cb1 \
+\cb3             showQuestion\cf9 ();\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Displays the current question and its answer options.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  showQuestion\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             resetState\cf9 ();\cf5  \cf8 // Clear previous answers and feedback\cf5 \cb1 \
+\cb3             \cf12 const\cf5  questionData \cf9 =\cf5  questions\cf9 [\cf5 currentQuestionIndex\cf9 ];\cf5 \cb1 \
+\cb3             questionDisplay\cf9 .\cf5 textContent \cf9 =\cf5  questionData\cf9 .\cf5 question\cf9 ;\cf5  \cf8 // Display question text\cf5 \cb1 \
+\
+\cb3             \cf8 // Create buttons for each answer option\cf5 \cb1 \
+\cb3             questionData\cf9 .\cf5 answers\cf9 .\cf5 forEach\cf9 (\cf5 answer \cf9 =>\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  button \cf9 =\cf5  document\cf9 .\cf5 createElement\cf9 (\cf10 'button'\cf9 );\cf5 \cb1 \
+\cb3                 button\cf9 .\cf5 textContent \cf9 =\cf5  answer\cf9 .\cf5 text\cf9 ;\cf5 \cb1 \
+\cb3                 button\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'answer-button'\cf9 ,\cf5  \cf10 'rounded-xl'\cf9 ,\cf5  \cf10 'px-4'\cf9 ,\cf5  \cf10 'py-3'\cf9 ,\cf5  \cf10 'text-lg'\cf9 ,\cf5  \cf10 'font-medium'\cf9 ,\cf5  \cf10 'text-left'\cf9 );\cf5 \cb1 \
+\cb3                 \cf8 // Store correct status as a data attribute\cf5 \cb1 \
+\cb3                 \cf12 if\cf5  \cf9 (\cf5 answer\cf9 .\cf5 correct\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     button\cf9 .\cf5 dataset\cf9 .\cf5 correct \cf9 =\cf5  \cf12 true\cf9 ;\cf5 \cb1 \
+\cb3                 \cf9 \}\cf5 \cb1 \
+\cb3                 button\cf9 .\cf5 addEventListener\cf9 (\cf10 'click'\cf9 ,\cf5  selectAnswer\cf9 );\cf5  \cf8 // Add click listener\cf5 \cb1 \
+\cb3                 answerButtons\cf9 .\cf5 appendChild\cf9 (\cf5 button\cf9 );\cf5 \cb1 \
+\cb3             \cf9 \});\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Resets the UI state for a new question: clears buttons, hides feedback and next button.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  resetState\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf8 // Remove all existing answer buttons\cf5 \cb1 \
+\cb3             \cf12 while\cf5  \cf9 (\cf5 answerButtons\cf9 .\cf5 firstChild\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 answerButtons\cf9 .\cf5 removeChild\cf9 (\cf5 answerButtons\cf9 .\cf5 firstChild\cf9 );\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3             feedbackArea\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5 \cb1 \
+\cb3             nextButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5 \cb1 \
+\cb3             nextButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 'Next Question'\cf9 ;\cf5  \cf8 // Reset button text for typical flow\cf5 \cb1 \
+\cb3             feedbackMessage\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 ''\cf9 ;\cf5  \cf8 // Clear previous feedback message\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Handles the user's answer selection.\cf5 \cb1 \
+\cf8 \cb3          * @param \{Event\} e - The click event object.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  selectAnswer\cf9 (\cf5 e\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf12 if\cf5  \cf9 (!\cf5 quizActive\cf9 )\cf5  \cf12 return\cf9 ;\cf5  \cf8 // Prevent interaction if quiz is over\cf5 \cb1 \
+\
+\cb3             \cf12 const\cf5  selectedButton \cf9 =\cf5  e\cf9 .\cf5 target\cf9 ;\cf5 \cb1 \
+\cb3             \cf12 const\cf5  isCorrect \cf9 =\cf5  selectedButton\cf9 .\cf5 dataset\cf9 .\cf5 correct \cf9 ===\cf5  \cf10 'true'\cf9 ;\cf5 \cb1 \
+\
+\cb3             \cf8 // Disable all answer buttons after selection\cf5 \cb1 \
+\cb3             \cf14 Array\cf9 .\cf12 from\cf9 (\cf5 answerButtons\cf9 .\cf5 children\cf9 ).\cf5 forEach\cf9 (\cf5 button \cf9 =>\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 button\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'pointer-events-none'\cf9 );\cf5  \cf8 // Disable clicks\cf5 \cb1 \
+\cb3                 button\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'selected'\cf9 );\cf5  \cf8 // Remove any lingering selected states\cf5 \cb1 \
+\cb3             \cf9 \});\cf5 \cb1 \
+\
+\cb3             \cf8 // Mark selected button\cf5 \cb1 \
+\cb3             selectedButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'selected'\cf9 );\cf5 \cb1 \
+\
+\cb3             \cf8 // Apply styling based on correctness and update score\cf5 \cb1 \
+\cb3             \cf12 if\cf5  \cf9 (\cf5 isCorrect\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 selectedButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'correct'\cf9 );\cf5 \cb1 \
+\cb3                 score\cf9 ++;\cf5 \cb1 \
+\cb3                 feedbackMessage\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Correct! "\cf5  \cf9 +\cf5  questions\cf9 [\cf5 currentQuestionIndex\cf9 ].\cf5 explanation\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 else\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 selectedButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'incorrect'\cf9 );\cf5 \cb1 \
+\cb3                 \cf8 // Find and highlight the correct answer\cf5 \cb1 \
+\cb3                 \cf14 Array\cf9 .\cf12 from\cf9 (\cf5 answerButtons\cf9 .\cf5 children\cf9 ).\cf5 forEach\cf9 (\cf5 button \cf9 =>\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     \cf12 if\cf5  \cf9 (\cf5 button\cf9 .\cf5 dataset\cf9 .\cf5 correct \cf9 ===\cf5  \cf10 'true'\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                         button\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'correct'\cf9 );\cf5 \cb1 \
+\cb3                     \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 \});\cf5 \cb1 \
+\cb3                 feedbackMessage\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Incorrect. "\cf5  \cf9 +\cf5  questions\cf9 [\cf5 currentQuestionIndex\cf9 ].\cf5 explanation\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\
+\cb3             feedbackArea\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Show feedback\cf5 \cb1 \
+\cb3             nextButton\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Show next button\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Show learn more button\cf5 \cb1 \
+\
+\cb3             \cf8 // If it's the last question, change next button text to 'Show Results'\cf5 \cb1 \
+\cb3             \cf12 if\cf5  \cf9 (\cf5 currentQuestionIndex \cf9 ===\cf5  questions\cf9 .\cf5 length \cf9 -\cf5  \cf13 1\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 nextButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 'Show Results'\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Advances to the next question or shows the final results.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  handleNextButton\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             currentQuestionIndex\cf9 ++;\cf5 \cb1 \
+\cb3             \cf12 if\cf5  \cf9 (\cf5 currentQuestionIndex \cf9 <\cf5  questions\cf9 .\cf5 length\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 showQuestion\cf9 ();\cf5  \cf8 // Load next question\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 else\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 showResults\cf9 ();\cf5  \cf8 // Quiz finished, show results\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Displays the final score and offers a restart option.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 function\cf5  showResults\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             quizActive \cf9 =\cf5  \cf12 false\cf9 ;\cf5  \cf8 // Deactivate quiz interaction\cf5 \cb1 \
+\cb3             resetState\cf9 ();\cf5  \cf8 // Clear questions and buttons\cf5 \cb1 \
+\cb3             questionDisplay\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 'Quiz Completed!'\cf9 ;\cf5 \cb1 \
+\cb3             nextButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Hide next button\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Hide learn more button in results\cf5 \cb1 \
+\
+\cb3             scoreDisplay\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 `You scored \cf9 $\{\cf5 score\cf9 \}\cf10  out of \cf9 $\{\cf5 questions\cf9 .\cf5 length\cf9 \}\cf10 !`\cf9 ;\cf5 \cb1 \
+\cb3             resultsArea\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'hidden'\cf9 );\cf5  \cf8 // Show results container\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Calls the Gemini API to generate more information about the current question's topic.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 async\cf5  \cf12 function\cf5  fetchLearnMore\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             \cf12 const\cf5  currentTopic \cf9 =\cf5  questions\cf9 [\cf5 currentQuestionIndex\cf9 ].\cf5 question\cf9 .\cf5 split\cf9 (\cf10 "'"\cf9 )[\cf13 1\cf9 ]\cf5  \cf9 ||\cf5  questions\cf9 [\cf5 currentQuestionIndex\cf9 ].\cf5 question\cf9 ;\cf5  \cf8 // Simple way to extract a movie title or topic\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Loading... 
+\f1 \uc0\u10024 
+\f0 "\cf9 ;\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'loading'\cf9 );\cf5 \cb1 \
+\cb3             learnMoreButton\cf9 .\cf5 disabled \cf9 =\cf5  \cf12 true\cf9 ;\cf5 \cb1 \
+\
+\cb3             \cf12 try\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf12 let\cf5  chatHistory \cf9 =\cf5  \cf9 [];\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  prompt \cf9 =\cf5  \cf10 `Provide a very brief (2-3 sentences, max 50 words) interesting fact or summary about "\cf9 $\{\cf5 currentTopic\cf9 \}\cf10 ". Do not include the question or answer in your response. Focus on a single interesting aspect.`\cf9 ;\cf5 \cb1 \
+\cb3                 chatHistory\cf9 .\cf5 push\cf9 (\{\cf5  role\cf9 :\cf5  \cf10 "user"\cf9 ,\cf5  parts\cf9 :\cf5  \cf9 [\{\cf5  text\cf9 :\cf5  prompt \cf9 \}]\cf5  \cf9 \});\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  payload \cf9 =\cf5  \cf9 \{\cf5  contents\cf9 :\cf5  chatHistory \cf9 \};\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  apiKey \cf9 =\cf5  \cf10 ""\cf9 ;\cf5  \cf8 // Canvas will provide this at runtime\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  apiUrl \cf9 =\cf5  \cf10 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=\cf9 $\{\cf5 apiKey\cf9 \}\cf10 `\cf9 ;\cf5 \cb1 \
+\
+\cb3                 \cf12 const\cf5  response \cf9 =\cf5  \cf12 await\cf5  fetch\cf9 (\cf5 apiUrl\cf9 ,\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     method\cf9 :\cf5  \cf10 'POST'\cf9 ,\cf5 \cb1 \
+\cb3                     headers\cf9 :\cf5  \cf9 \{\cf5  \cf10 'Content-Type'\cf9 :\cf5  \cf10 'application/json'\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     body\cf9 :\cf5  \cf14 JSON\cf9 .\cf5 stringify\cf9 (\cf5 payload\cf9 )\cf5 \cb1 \
+\cb3                 \cf9 \});\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  result \cf9 =\cf5  \cf12 await\cf5  response\cf9 .\cf5 json\cf9 ();\cf5 \cb1 \
+\
+\cb3                 \cf12 if\cf5  \cf9 (\cf5 result\cf9 .\cf5 candidates \cf9 &&\cf5  result\cf9 .\cf5 candidates\cf9 .\cf5 length \cf9 >\cf5  \cf13 0\cf5  \cf9 &&\cf5 \cb1 \
+\cb3                     result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content \cf9 &&\cf5  result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts \cf9 &&\cf5 \cb1 \
+\cb3                     result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts\cf9 .\cf5 length \cf9 >\cf5  \cf13 0\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     \cf12 const\cf5  text \cf9 =\cf5  result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts\cf9 [\cf13 0\cf9 ].\cf5 text\cf9 ;\cf5 \cb1 \
+\cb3                     \cf8 // Append the new info to the existing feedback message\cf5 \cb1 \
+\cb3                     feedbackMessage\cf9 .\cf5 textContent \cf9 +=\cf5  \cf10 "\\n\\n
+\f1 \uc0\u10024 
+\f0  More Info: "\cf5  \cf9 +\cf5  text\cf9 ;\cf5 \cb1 \
+\cb3                 \cf9 \}\cf5  \cf12 else\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     feedbackMessage\cf9 .\cf5 textContent \cf9 +=\cf5  \cf10 "\\n\\nCould not fetch more information at this time."\cf9 ;\cf5 \cb1 \
+\cb3                 \cf9 \}\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 catch\cf5  \cf9 (\cf5 error\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 console\cf9 .\cf5 error\cf9 (\cf10 "Error fetching 'learn more' info:"\cf9 ,\cf5  error\cf9 );\cf5 \cb1 \
+\cb3                 feedbackMessage\cf9 .\cf5 textContent \cf9 +=\cf5  \cf10 "\\n\\nError fetching more information."\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 finally\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 learnMoreButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Learn More 
+\f1 \uc0\u10024 
+\f0 "\cf9 ;\cf5 \cb1 \
+\cb3                 learnMoreButton\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'loading'\cf9 );\cf5 \cb1 \
+\cb3                 learnMoreButton\cf9 .\cf5 disabled \cf9 =\cf5  \cf12 false\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\cb3         \cf8 /**\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb3          * Calls the Gemini API to generate a new quiz question and adds it to the quiz.\cf5 \cb1 \
+\cf8 \cb3          */\cf5 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3         \cf12 async\cf5  \cf12 function\cf5  fetchNewQuestion\cf9 ()\cf5  \cf9 \{\cf5 \cb1 \
+\cb3             generateNewQuestionButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Generating... 
+\f1 \uc0\u10024 
+\f0 "\cf9 ;\cf5 \cb1 \
+\cb3             generateNewQuestionButton\cf9 .\cf5 classList\cf9 .\cf5 add\cf9 (\cf10 'loading'\cf9 );\cf5 \cb1 \
+\cb3             generateNewQuestionButton\cf9 .\cf5 disabled \cf9 =\cf5  \cf12 true\cf9 ;\cf5 \cb1 \
+\
+\cb3             \cf12 try\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 \cf12 let\cf5  chatHistory \cf9 =\cf5  \cf9 [];\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  prompt \cf9 =\cf5  \cf10 "Generate a challenging movie trivia question with four multiple-choice answers and a brief explanation. Ensure exactly one answer is correct. Provide the output in JSON format."\cf9 ;\cf5 \cb1 \
+\cb3                 chatHistory\cf9 .\cf5 push\cf9 (\{\cf5  role\cf9 :\cf5  \cf10 "user"\cf9 ,\cf5  parts\cf9 :\cf5  \cf9 [\{\cf5  text\cf9 :\cf5  prompt \cf9 \}]\cf5  \cf9 \});\cf5 \cb1 \
+\
+\cb3                 \cf12 const\cf5  payload \cf9 =\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     contents\cf9 :\cf5  chatHistory\cf9 ,\cf5 \cb1 \
+\cb3                     generationConfig\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                         responseMimeType\cf9 :\cf5  \cf10 "application/json"\cf9 ,\cf5 \cb1 \
+\cb3                         responseSchema\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                             type\cf9 :\cf5  \cf10 "OBJECT"\cf9 ,\cf5 \cb1 \
+\cb3                             properties\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                                 \cf10 "question"\cf9 :\cf5  \cf9 \{\cf5  \cf10 "type"\cf9 :\cf5  \cf10 "STRING"\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                                 \cf10 "answers"\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                                     \cf10 "type"\cf9 :\cf5  \cf10 "ARRAY"\cf9 ,\cf5 \cb1 \
+\cb3                                     \cf10 "items"\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                                         \cf10 "type"\cf9 :\cf5  \cf10 "OBJECT"\cf9 ,\cf5 \cb1 \
+\cb3                                         \cf10 "properties"\cf9 :\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                                             \cf10 "text"\cf9 :\cf5  \cf9 \{\cf5  \cf10 "type"\cf9 :\cf5  \cf10 "STRING"\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                                             \cf10 "correct"\cf9 :\cf5  \cf9 \{\cf5  \cf10 "type"\cf9 :\cf5  \cf10 "BOOLEAN"\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                                         \cf9 \},\cf5 \cb1 \
+\cb3                                         \cf10 "required"\cf9 :\cf5  \cf9 [\cf10 "text"\cf9 ,\cf5  \cf10 "correct"\cf9 ]\cf5 \cb1 \
+\cb3                                     \cf9 \}\cf5 \cb1 \
+\cb3                                 \cf9 \},\cf5 \cb1 \
+\cb3                                 \cf10 "explanation"\cf9 :\cf5  \cf9 \{\cf5  \cf10 "type"\cf9 :\cf5  \cf10 "STRING"\cf5  \cf9 \}\cf5 \cb1 \
+\cb3                             \cf9 \},\cf5 \cb1 \
+\cb3                             \cf10 "required"\cf9 :\cf5  \cf9 [\cf10 "question"\cf9 ,\cf5  \cf10 "answers"\cf9 ,\cf5  \cf10 "explanation"\cf9 ]\cf5 \cb1 \
+\cb3                         \cf9 \}\cf5 \cb1 \
+\cb3                     \cf9 \}\cf5 \cb1 \
+\cb3                 \cf9 \};\cf5 \cb1 \
+\
+\cb3                 \cf12 const\cf5  apiKey \cf9 =\cf5  \cf10 ""\cf9 ;\cf5  \cf8 // Canvas will provide this at runtime\cf5 \cb1 \
+\cb3                 \cf12 const\cf5  apiUrl \cf9 =\cf5  \cf10 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=\cf9 $\{\cf5 apiKey\cf9 \}\cf10 `\cf9 ;\cf5 \cb1 \
+\
+\cb3                 \cf12 const\cf5  response \cf9 =\cf5  \cf12 await\cf5  fetch\cf9 (\cf5 apiUrl\cf9 ,\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     method\cf9 :\cf5  \cf10 'POST'\cf9 ,\cf5 \cb1 \
+\cb3                     headers\cf9 :\cf5  \cf9 \{\cf5  \cf10 'Content-Type'\cf9 :\cf5  \cf10 'application/json'\cf5  \cf9 \},\cf5 \cb1 \
+\cb3                     body\cf9 :\cf5  \cf14 JSON\cf9 .\cf5 stringify\cf9 (\cf5 payload\cf9 )\cf5 \cb1 \
+\cb3                 \cf9 \});\cf5 \cb1 \
+\
+\cb3                 \cf12 const\cf5  result \cf9 =\cf5  \cf12 await\cf5  response\cf9 .\cf5 json\cf9 ();\cf5 \cb1 \
+\
+\cb3                 \cf12 if\cf5  \cf9 (\cf5 result\cf9 .\cf5 candidates \cf9 &&\cf5  result\cf9 .\cf5 candidates\cf9 .\cf5 length \cf9 >\cf5  \cf13 0\cf5  \cf9 &&\cf5 \cb1 \
+\cb3                     result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content \cf9 &&\cf5  result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts \cf9 &&\cf5 \cb1 \
+\cb3                     result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts\cf9 .\cf5 length \cf9 >\cf5  \cf13 0\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     \cf12 const\cf5  jsonString \cf9 =\cf5  result\cf9 .\cf5 candidates\cf9 [\cf13 0\cf9 ].\cf5 content\cf9 .\cf5 parts\cf9 [\cf13 0\cf9 ].\cf5 text\cf9 ;\cf5 \cb1 \
+\cb3                     \cf12 const\cf5  newQuestion \cf9 =\cf5  \cf14 JSON\cf9 .\cf5 parse\cf9 (\cf5 jsonString\cf9 );\cf5 \cb1 \
+\
+\cb3                     \cf8 // Add the new question to the questions array\cf5 \cb1 \
+\cb3                     questions\cf9 .\cf5 push\cf9 (\cf5 newQuestion\cf9 );\cf5 \cb1 \
+\cb3                     \cf8 // Start the quiz over, which will now include the new question\cf5 \cb1 \
+\cb3                     startQuiz\cf9 ();\cf5 \cb1 \
+\cb3                 \cf9 \}\cf5  \cf12 else\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                     \cf8 // Handle cases where the response structure is unexpected or content is missing\cf5 \cb1 \
+\cb3                     alert\cf9 (\cf10 "Failed to generate a new question. Please try again."\cf9 );\cf5  \cf8 // Using alert only for error display as per strict instruction\cf5 \cb1 \
+\cb3                     console\cf9 .\cf5 error\cf9 (\cf10 "Gemini API response structure unexpected:"\cf9 ,\cf5  result\cf9 );\cf5 \cb1 \
+\cb3                 \cf9 \}\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 catch\cf5  \cf9 (\cf5 error\cf9 )\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 console\cf9 .\cf5 error\cf9 (\cf10 "Error generating new question:"\cf9 ,\cf5  error\cf9 );\cf5 \cb1 \
+\cb3                 alert\cf9 (\cf10 "An error occurred while generating a new question."\cf9 );\cf5  \cf8 // Using alert only for error display as per strict instruction\cf5 \cb1 \
+\cb3             \cf9 \}\cf5  \cf12 finally\cf5  \cf9 \{\cf5 \cb1 \
+\cb3                 generateNewQuestionButton\cf9 .\cf5 textContent \cf9 =\cf5  \cf10 "Generate New Question 
+\f1 \uc0\u10024 
+\f0 "\cf9 ;\cf5 \cb1 \
+\cb3                 generateNewQuestionButton\cf9 .\cf5 classList\cf9 .\cf5 remove\cf9 (\cf10 'loading'\cf9 );\cf5 \cb1 \
+\cb3                 generateNewQuestionButton\cf9 .\cf5 disabled \cf9 =\cf5  \cf12 false\cf9 ;\cf5 \cb1 \
+\cb3             \cf9 \}\cf5 \cb1 \
+\cb3         \cf9 \}\cf5 \cb1 \
+\
+\
+\cb3         \cf8 // Event listeners for navigation and new Gemini API features\cf5 \cb1 \
+\cb3         nextButton\cf9 .\cf5 addEventListener\cf9 (\cf10 'click'\cf9 ,\cf5  handleNextButton\cf9 );\cf5 \cb1 \
+\cb3         restartButton\cf9 .\cf5 addEventListener\cf9 (\cf10 'click'\cf9 ,\cf5  startQuiz\cf9 );\cf5 \cb1 \
+\cb3         learnMoreButton\cf9 .\cf5 addEventListener\cf9 (\cf10 'click'\cf9 ,\cf5  fetchLearnMore\cf9 );\cf5 \cb1 \
+\cb3         generateNewQuestionButton\cf9 .\cf5 addEventListener\cf9 (\cf10 'click'\cf9 ,\cf5  fetchNewQuestion\cf9 );\cf5 \cb1 \
+\
+\
+\cb3         \cf8 // Initial call to start the quiz when the page loads\cf5 \cb1 \
+\cb3         document\cf9 .\cf5 addEventListener\cf9 (\cf10 'DOMContentLoaded'\cf9 ,\cf5  startQuiz\cf9 );\cf5 \cb1 \
+\cb3     \cf6 </\cf2 script\cf6 >\cf5 \cb1 \
+\cf6 \cb3 </\cf2 body\cf6 >\cf5 \cb1 \
+\cf6 \cb3 </\cf2 html\cf6 >\cf5 \cb1 \
+\
+}
